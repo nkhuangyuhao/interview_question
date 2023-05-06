@@ -33,7 +33,7 @@ with gzip.open(filename, mode="rt") as f:
             std = std1(list)
             csv_writer.writerow((startTime, std))
             startTime = startTime + 1000
-            list.append(parsed[0])
+            list.append([int(parsed[0]), float(parsed[2])])
             for item in list:
                 if startTime - item[0] > 10000:
                     list.pop(0)
